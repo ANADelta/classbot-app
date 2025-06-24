@@ -1,6 +1,6 @@
-# streamlit_app.py
 import streamlit as st
-import sys, os
+import sys
+import os
 
 # Fix module paths for imports
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
@@ -8,9 +8,13 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from app.main import process_request
 from app.notifier import send_whatsapp_reminder, post_announcement
 
-# ---------- Session defaults ----------
+# --- Persistent In-Memory User Store ---
 if "users" not in st.session_state:
-    st.session_state.users = {"andrewnarine": "ClassBot2025"}   # demo user
+    st.session_state.users = {}
+
+if "andrewnarine" not in st.session_state.users:
+    st.session_state.users["andrewnarine"] = "ClassBot2025"
+
 if "authenticated" not in st.session_state:
     st.session_state.authenticated = False
 if "username" not in st.session_state:
