@@ -4,7 +4,7 @@ import streamlit as st
 import sys
 import os
 
-# Fix module paths for importing from app/
+# Fix module paths for imports
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from app.main import process_request
@@ -99,6 +99,7 @@ else:
 # --- Footer ---
 st.markdown("---")
 st.caption("🛡️ Powered by ANADelta • AlphaClassBot © 2025")
+
 
 
 
