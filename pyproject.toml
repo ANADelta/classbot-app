@@ -1,0 +1,12 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "alphaclassbot"
+version = "0.1.0"
+dependencies = [
+    "streamlit",
+    "openai",
+    "python-dotenv"
+]
